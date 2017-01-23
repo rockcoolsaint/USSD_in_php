@@ -29,6 +29,7 @@
                     } else {
                         $response = "CON MICRO-PENSIONS"."<br/>";
                         $response .= "Type contribution amount";
+                        //echo $response;
                     }
 
         		  break;
@@ -63,7 +64,8 @@
                     $list .= "4. PEER TO PEER LENDING"."<br/>";
                     $list .= "5. NON-GOVERNMENT BONDS";
 
-                    $response = "CON"."<br/>"."$list";    
+                    $response = "CON"."<br/>"."$list";
+                    //echo "$response";    
         		  break;
         	}
         }

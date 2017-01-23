@@ -125,12 +125,13 @@
                     $list .= "5. NON-GOVERNMENT BONDS";
 
                     $response = "CON"."<br/>"."$list";
-                    echo "$response";
+                    return $response;
                 } else {
                     // NIBSS verification
                     if (strlen($this->phonenumber) < 11) {
                         // request failed!
-                        echo "END Sorry, this number ". $this->phonenumber ." failed verification.";
+                        $response = "END Sorry, this number ". $this->phonenumber ." failed verification.";
+                        return $response;
                     } 
                     else {  
                         // Insert record into DB
@@ -149,7 +150,7 @@
                             $list .= "5. NON-GOVERNMENT BONDS";
 
                             $response = "CON"."<br/>"."$list";
-                            return "$response";
+                            return  "$response";
                             //return "END You have registered successfully";  
                         }
                     }
