@@ -125,7 +125,7 @@
                     $list .= "5. NON-GOVERNMENT BONDS";
 
                     $response = "CON"."<br/>"."$list";
-                    return "$response";
+                    echo "$response";
                 } else {
                     // NIBSS verification
                     if (strlen($this->phonenumber) < 11) {

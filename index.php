@@ -21,8 +21,16 @@
         	switch ($level[0]) {
         		case 1:
         			//  MICRO-PENSIONS
-                    //$response = "MICRO-PENSIONS";
-                    $response = "END The sum of ".$level[1]." has been transfered from user’s account to the account of the pension fund operator via the NIBSS interface. Your pension account has been updated, and a notification sent to your phone number with information to reflect the update.";
+                    if(count($level) > 1) {
+                        //$response = "CON MICRO-PENSIONS"."<br/>";
+                        //$response .= "Type contribution amount";
+                        $response = "END The sum of ".$level[1]." has been transfered from user’s account to the account of the pension fund operator via the NIBSS interface. Your pension account has been updated, and a notification sent to your phone number with information to reflect the update.";
+                        echo "$response";
+                    } else {
+                        $response = "CON MICRO-PENSIONS"."<br/>";
+                        $response .= "Type contribution amount";
+                    }
+
         		  break;
 
         		case 2:
@@ -30,28 +38,39 @@
                     $response = "CON"."<br/>";
                     $response .= "1. LIFE ASSURANCE"."<br/>";
                     $response .= "2. HEALTH INSURANCE"."<br/>";
+                    //echo "$response";
         		  break;
 
                 case 3:
                     $response = "TRADING OF SHARES";
+                    //echo "$response";
                   break;
 
                 case 4:
                     $response = "PEER TO PEER LENDING";
+                    //echo "$response";
                   break;
 
                 case 5:
                     $response = "NON-GOVERNMENT BONDS";
+                    //echo "$response";
                   break;
         		
         		default:
-        			//registration
+                    $list = "1. MICRO-PENSIONS"."<br/>";
+                    $list .= "2. MICRO INSURANCE"."<br/>";
+                    $list .= "3. TRADING OF SHARES"."<br/>";
+                    $list .= "4. PEER TO PEER LENDING"."<br/>";
+                    $list .= "5. NON-GOVERNMENT BONDS";
+
+                    $response = "CON"."<br/>"."$list";    
         		  break;
         	}
         }
     }
 
-    echo $response;
+    echo "$response";
+    
 ?>
 
 
